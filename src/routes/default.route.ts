@@ -391,7 +391,7 @@ router.post(
                 ? seed_tracks
                 : JSON.parse(seed_tracks);
 
-            // Gọi Spotify API
+            // Gọi Spotify API for testing
             const result = await spotifyApi.getRecommendations({
                 min_energy: minEnergyNumber,
                 min_popularity: minPopularityNumber,
