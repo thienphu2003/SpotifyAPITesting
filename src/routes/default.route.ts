@@ -12,7 +12,7 @@ const SPOTIFY_CALL_BACK_URL_LOCAL =
 const spotifyApi = new SpotifyWebApi({
     clientId: SPOTIFY_CLIENT_ID,
     clientSecret: SPOTIFY_CLIENT_SECRET,
-    redirectUri: 'https://spotifyapitesting-1.onrender.com/callback',
+    redirectUri: 'http://localhost:5555/callback',
 });
 
 interface RecommendationQuery {
@@ -279,10 +279,9 @@ router.get('/callback', async (req, res) => {
     const code = req.query.code as string;
     try {
         const data = await spotifyApi.authorizationCodeGrant(code);
+
         const accessToken = data.body['access_token'];
         const refreshToken = data.body['refresh_token'];
-
-        // Set the access token on the API object to use it in later calls
         spotifyApi.setAccessToken(accessToken);
         spotifyApi.setRefreshToken(refreshToken);
 
