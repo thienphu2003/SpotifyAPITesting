@@ -12,7 +12,7 @@ const SPOTIFY_CALL_BACK_URL_LOCAL =
 const spotifyApi = new SpotifyWebApi({
     clientId: SPOTIFY_CLIENT_ID,
     clientSecret: SPOTIFY_CLIENT_SECRET,
-    redirectUri: 'https://spotifyapitesting.onrender.com/callback',
+    redirectUri: 'https://spotifyapitesting-2.onrender.com/callback',
 });
 
 interface RecommendationQuery {
